@@ -8,15 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Test full object
-      run: |
-        echo "github                   : $GITHUB_VARIABLE"
-        echo "github.event             : $GITHUB_EVENT_VARIABLE"
-        echo "github.event.pull_request: $GITHUB_EVENT_PR_VARIABLE"
-      env:
-        GITHUB_VARIABLE: ${{ github }}
-        GITHUB_EVENT_VARIABLE: ${{ github.event }}
-        GITHUB_EVENT_PR_VARIABLE: ${{ github.event.pull_request }}
+    - uses: hmarr/debug-action@v2
     - name: Say hello
       run: |
         echo "github.event.pull_request.merged           : $MERGED_RAW"
