@@ -8,6 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: hmarr/debug-action@v2
     - name: Say hello
       run: |
         echo "github.event.pull_request.merged           : $MERGED_RAW"
